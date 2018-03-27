@@ -10,7 +10,7 @@ sys.path.append(os.path.abspath('../../'))
 os.environ['DJANGO_SETTINGS_MODULE'] = 'JobEvaluating.settings'
 BOT_NAME = 'JobCrawl'
 
-USERDICT_PATH = os.path.dirname(__file__)+'\userdict.txt'
+USERDICT_PATH = os.path.dirname(__file__)+'/userdict.txt'
 
 SPIDER_MODULES = ['JobCrawl.spiders']
 NEWSPIDER_MODULE = 'JobCrawl.spiders'
@@ -38,7 +38,7 @@ ITEM_PIPELINES = {
 MYSQL_HOST='127.0.0.1'
 MYSQL_DBNAME='test'
 MYSQL_USER='root'
-MYSQL_PASSWD='chen'
+MYSQL_PASSWD=''
 
 
 # redis

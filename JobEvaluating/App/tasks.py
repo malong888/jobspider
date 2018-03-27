@@ -19,7 +19,7 @@ def executeSql(sql):
 @task()
 def crawl():
     os.environ.setdefault('SCRAPY_SETTINGS_MODULE', 'JobCrawl.settings')
-    return subprocess.call(['python', 'JobCrawl\crawlall.py'])
+    return subprocess.call(['python', 'JobCrawl/crawlall.py'])
 
 @task()
 def update_sql():

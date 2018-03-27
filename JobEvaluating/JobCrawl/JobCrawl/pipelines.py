@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-
+import pymysql
+pymysql.install_as_MySQLdb()
 import jieba
 import jieba.analyse
 import jieba.posseg

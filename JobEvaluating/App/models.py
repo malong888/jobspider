@@ -16,17 +16,26 @@ class ZpInfo(models.Model):
     job_description = models.CharField(max_length=1024)  # 工作描述
     datetime = models.DateTimeField(auto_now_add=True,  blank=True)  # 时间戳
 
+    class Meta:
+        db_table = 'app_zpinfo'
+
 
 # 需求
 class Asks(models.Model):
     id = models.AutoField(primary_key=True)  # id
     ask = models.CharField(max_length=100)  # 需求
 
+    class Meta:
+        db_table = 'app_asks'
+
 
 # 城市
 class Citys(models.Model):
     id = models.AutoField(primary_key=True)  # id
     city = models.CharField(max_length=100)  # 城市
+
+    class Meta:
+        db_table = 'app_citys'
 
 
 # 中间结果
@@ -37,3 +46,6 @@ class Middleware(models.Model):
     City = models.IntegerField()
     KeyWords = models.IntegerField()
     Education = models.IntegerField()
+
+    class Meta:
+        db_table = 'app_middleware'

@@ -13,7 +13,8 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 from unipath import Path
 from datetime import timedelta
-
+import pymysql
+pymysql.install_as_MySQLdb()
 
 BASE_DIR = Path(__file__).parent
 
@@ -32,7 +33,7 @@ SECRET_KEY = '2txp%bur0x77*w*&c-h!un&(s$(m9ly417)61lmku9^o11%g@@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Celery settings
@@ -66,7 +67,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'djcelery',
-     'App',
+    'App',
 ]
 
 MIDDLEWARE = [
@@ -110,7 +111,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'test',
         'USER': 'root',
-        'PASSWORD': 'chen',
+        'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }

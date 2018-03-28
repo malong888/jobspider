@@ -23,6 +23,7 @@ def display(request):
     ctx = {}
     if request.is_ajax():
         val = request.POST.get('choose')
+        print val
         if val in 'salary':
             salary = helper.getMiddleSalary()
             ctx['salary'] = salary
@@ -32,15 +33,17 @@ def display(request):
         if val in 'ask':
             ask = helper.getMiddleKeyWords()
             ctx['ask'] = ask
-        if val  in 'citys':
+        if val in 'citys':
             citys = helper.getMiddleCity()
+            # print citys
             ctx['citys'] = citys
         if val in 'education':
             education = helper.getMiddleEducation()
-           # print education
+            print education
             ctx['education'] = education
     else:
         salary = helper.getMiddleSalary()
+        # print salary
         ctx['salary'] = salary
     return render(request, 'display.html', ctx)
 
@@ -69,6 +72,7 @@ def search(request):
 def analyse(request):
     ctx = {}
     citys = []
+    # print ctx
     if request.GET.get('beijing'):
         citys.append(u'北京')
     if request.GET.get('wuhan'):

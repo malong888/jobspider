@@ -5,6 +5,9 @@
 import os
 import sys
 
+import pymysql
+pymysql.install_as_MySQLdb()
+
 PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
 sys.path.append(os.path.abspath('../../'))
 os.environ['DJANGO_SETTINGS_MODULE'] = 'JobEvaluating.settings'
@@ -36,9 +39,9 @@ ITEM_PIPELINES = {
 
 # MySQL
 MYSQL_HOST='127.0.0.1'
-MYSQL_DBNAME='test'
-MYSQL_USER='root'
-MYSQL_PASSWD=''
+MYSQL_DBNAME='recr'
+MYSQL_USER='atguigu'
+MYSQL_PASSWD='123456'
 
 
 # redis
